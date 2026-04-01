@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: poppins;
+  scroll-behavior: smooth;
+}
+/* to create the smooth slide scrool effect start from here | */
+.niceSlideRight::before,
+.niceSlideLeft::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+.niceSlideRight {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3)
+  );
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 50px 100px;
+}
+.niceSlideLeft {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3)
+  );
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 50px 100px;
+}
+/* to create the smooth slide scrool effect end here | */
+
+.section1::before {
+  /* this for section image  */
+  background-image: url(/img/coffee\ shop.jpg);
+}
+.section1 {
+  /* here to do code for this section only */
+}
+
+.info {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section2::before {
+  /* this for section image  */
+  background-image: url(/img/img1.jpg);
+}
+.section2 {
+  /* here to do code for this section only */
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.textEff {
+  /* this is only for text effect only (to do the animation) */
+  /* start here */
+  font-size: var(--size);
+  -webkit-background-clip: text;
+  background-image: linear-gradient(orange);
+  color: transparent;
+  transition: all 0.3s;
+}
+
+.textEff:hover {
+  font-size: calc(var(--size) + 0.3rem);
+  letter-spacing: 0.2px;
+}
+/* end here */
+
+.headText {
+  --size: 2rem;
+  background-image: linear-gradient(to bottom left, orange, pink);
+}
+.titleText {
+  --size: 1.5rem;
+  background-image: linear-gradient(
+    to bottom left,
+    rgb(0, 255, 242),
+    rgb(0, 81, 173)
+  );
+}
