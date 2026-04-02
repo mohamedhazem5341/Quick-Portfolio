@@ -6,6 +6,99 @@
   font-family: poppins;
   scroll-behavior: smooth;
 }
+body {
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+.toTop {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #555555;
+  background: none;
+  margin: 50px 0px;
+  transition: all 0.3s;
+}
+.toTop:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(136, 136, 136, 0.452);
+  backdrop-filter: blur(5px);
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 100px 10px 100px;
+  z-index: 100;
+  animation: shows 0.3s linear;
+}
+@keyframes shows {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.navbar .iconSection img {
+  width: 60px;
+  animation: rotateicon 20s linear infinite;
+}
+@keyframes rotateicon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navlinks {
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.navlinks li:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.navlinks li {
+  position: relative;
+  list-style: none;
+  font-weight: 200;
+  font-size: 1.2rem;
+  transition: scale 0.2s ease;
+}
+.navlinks li:hover {
+  cursor: pointer;
+  font-weight: 300;
+  scale: 1.1;
+}
+.navlinks li:hover::after {
+  width: 100%;
+}
 /* to create the smooth slide scrool effect start from here | */
 .niceSlideRight::before,
 .niceSlideLeft::before {
@@ -20,6 +113,13 @@
   background-attachment: fixed;
   z-index: -1;
 }
+.niceSlideRight,
+.niceSlideLeft {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 50px 100px;
+}
 .niceSlideRight {
   background-image: linear-gradient(
     to right,
@@ -28,10 +128,6 @@
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.3)
   );
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  padding: 50px 100px;
 }
 .niceSlideLeft {
   background-image: linear-gradient(
@@ -41,10 +137,6 @@
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.3)
   );
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  padding: 50px 100px;
 }
 /* to create the smooth slide scrool effect end here | */
 
@@ -54,6 +146,7 @@
 }
 .section1 {
   /* here to do code for this section only */
+  display: flex;
 }
 
 .info {
@@ -63,33 +156,49 @@
   flex-direction: column;
   justify-content: center;
 }
-
+.Images {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section1 .Images img {
+  width: 400px;
+  border-radius: 10px;
+  transform: rotate(-10deg);
+  filter: blur(2px);
+  transition: all 0.5s;
+}
+.section1 .Images img:hover {
+  filter: blur(0px);
+  scale: 1.03;
+}
 .section2::before {
   /* this for section image  */
-  background-image: url(/img/img1.jpg);
+  background-image: url(/img/coffee\ shop2.jpg);
 }
 .section2 {
   /* here to do code for this section only */
   display: flex;
   flex-direction: row-reverse;
 }
-
+/* this is only for text effect only (to do the animation) */
+/* start here */
 .textEff {
-  /* this is only for text effect only (to do the animation) */
-  /* start here */
+  width: fit-content;
   font-size: var(--size);
   -webkit-background-clip: text;
   background-image: linear-gradient(orange);
   color: transparent;
   transition: all 0.3s;
 }
-
 .textEff:hover {
   font-size: calc(var(--size) + 0.3rem);
   letter-spacing: 0.2px;
 }
 /* end here */
-
 .headText {
   --size: 2rem;
   background-image: linear-gradient(to bottom left, orange, pink);
